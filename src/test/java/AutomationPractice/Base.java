@@ -16,21 +16,21 @@ public class Base {
 	}
 
 	public WebDriver DriverConnection() {
-		System.setProperty("webdriver.chrome.driver", "./src/test/resources/driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./src/test/resources/Drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		return driver;
 	}
 
 	// Wrappers
-	public WebElement finElement(By locator) {
+	public WebElement element(By locator) {
 		return driver.findElement(locator);
 	}
 
-	public List<WebElement> finElements(By locator) {
+	public List<WebElement> elements(By locator) {
 		return driver.findElements(locator);
 	}
 
-	public String getText(By locator) {
+	public String Text(By locator) {
 		return driver.findElement(locator).getText();
 	}
 
@@ -40,6 +40,10 @@ public class Base {
 
 	public void click(By locator) {
 		driver.findElement(locator).click();
+	}
+
+	public void click(WebElement WebElement) {
+		WebElement.click();
 	}
 
 	public void visit(String url) {
@@ -52,5 +56,9 @@ public class Base {
 
 	public void max() {
 		driver.manage().window().maximize();
+	}
+	
+	public void close() {
+		driver.close();
 	}
 }
