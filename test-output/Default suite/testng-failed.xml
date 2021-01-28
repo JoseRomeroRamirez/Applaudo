@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutomationPractice.AddItem">
+      <class name="AutomationPractice.RemoveItem">
         <methods>
           <include name="f"/>
           <include name="setup"/>
           <include name="afterTest"/>
         </methods>
-      </class> <!-- AutomationPractice.AddItem -->
+      </class> <!-- AutomationPractice.RemoveItem -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
