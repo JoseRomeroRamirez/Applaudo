@@ -3,6 +3,9 @@ package AutomationPractice;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 
 public class RemoveItem {
@@ -19,20 +22,17 @@ public class RemoveItem {
 
 	@Test
 	public void f() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		checkOut.add(driver, checkOut);
 		checkOut.click(checkOut.checkOutLocator);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		checkOut.click(checkOut.removeCart);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(checkOut.emptyCart));
+		Assert.assertTrue(checkOut.element(checkOut.emptyCart).isDisplayed());
 	}
 
 	@AfterTest
 	public void afterTest() {
-		//home.close();
+		checkOut.close();
 	}
 
 }

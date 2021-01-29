@@ -9,5 +9,6 @@ public class pageCheckOut extends pageHome {
 	}
 
 	By removeCart = By.className("icon-trash");
+	By emptyCart = By.xpath("//p[@class='alert alert-warning']");
 
 }
