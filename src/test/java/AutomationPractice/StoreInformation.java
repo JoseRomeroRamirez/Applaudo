@@ -2,18 +2,18 @@ package AutomationPractice;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 
-public class storeInformation {
+public class StoreInformation {
 
 	private WebDriver driver;
 	pageHome home;
 	SoftAssert sa = new SoftAssert();
 	
-	@BeforeTest
-	public void beforeTest() {
+	@BeforeClass
+	public void BeforeClass() {
 		home = new pageHome(driver);
 		driver = home.DriverConnection();
 		home.max();
@@ -30,8 +30,8 @@ public class storeInformation {
 		sa.assertAll();
 	}
 
-	@AfterTest
-	public void afterTest() {
+	@AfterClass
+	public void AfterClass() {
 		home.close();
 	}
 

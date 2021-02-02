@@ -1,17 +1,17 @@
 package AutomationPractice;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import static org.testng.Assert.assertEquals;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 
 public class SearchItem {
 	private WebDriver driver;
 	pageSearchResult search;
 
-	@BeforeTest
-	public void beforeTest() {
+	@BeforeClass
+	public void BeforeClass() {
 		search = new pageSearchResult(driver);
 		driver = search.DriverConnection();
 		search.max();
@@ -29,8 +29,8 @@ public class SearchItem {
 		}
 	}
 
-	@AfterTest
-	public void afterTest() {
+	@AfterClass
+	public void AfterClass() {
 		search.close();
 	}
 

@@ -1,16 +1,16 @@
 package AutomationPractice;
 
 import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
 
 public class AddItem {
 	private WebDriver driver;
 	pageHome home;
 
-	@BeforeTest
+	@BeforeClass
 	public void setup() {
 		home = new pageHome(driver);
 		driver = home.DriverConnection();
@@ -24,8 +24,8 @@ public class AddItem {
 		Assert.assertTrue(home.element(home.checkIcon).isDisplayed());
 	}
 
-	@AfterTest
-	public void afterTest() {
+	@AfterClass
+	public void AfterClass() {
 		home.close();
 	}
 
